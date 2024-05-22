@@ -3,7 +3,10 @@ const blogTitleInput = document.querySelector('#title');
 const contentInput = document.querySelector('#content');
 const submitButton = document.querySelector('#button');
 
-function redirectPage () {
+// Why do we need to call a function before the function?
+redirectPage();
+
+function redirectPage() {
     let storedUsername = localStorage.getItem('username');
     let storedTitle = localStorage.getItem('title');
     let storedContent = localStorage.getItem('content');
@@ -34,6 +37,11 @@ submitButton.addEventListener('click', function (event) {
         displayMessage('error', 'Please complete the form');
     }
 
+    localStorage.setItem('username', username);
+    localStorage.setItem('title', title);
+    localStorage.setItem('content', content);
+
+    redirectPage();
 
 
 });
