@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: center;
     padding-top: 100px;
+    gap: 4px;
 }
 
 #content-box {
