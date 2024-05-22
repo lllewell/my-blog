@@ -48,3 +48,18 @@ submitButton.addEventListener('click', function (event) {
 
 
 });
+
+const themeSwitcher = document.querySelector('#theme-switcher');
+const container = document.querySelector('.container dark');
+
+let mode = 'dark';
+
+themeSwitcher.addEventListener('click', function () {
+    if (mode === 'dark') {
+      mode = 'light';
+      container.setAttribute('class', 'container light');
+    } else {
+      mode = 'dark';
+      container.setAttribute('class', 'container dark');
+    }
+  });
