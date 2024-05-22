@@ -24,7 +24,7 @@ function storeData() {
 
         // Expert assistant gave me this code but not sure if works in this case to redirect to the next page
         // window.location.href = file:///Users/lianellewellyn/bootcamp/challenges/my-blog/blog.html
-    };
+}
 
 
 submitButton.addEventListener('click', function (event) {

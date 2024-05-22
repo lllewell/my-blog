@@ -3,6 +3,13 @@
     justify-content: center;
 }
 
+.blog-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 4px;
+}
+
 #form {
     display: flex;
     flex-direction: column;
@@ -13,4 +20,8 @@
 
 #content-box {
     height: 48px;
+}
+
+#back-button {
+    align-self: center;
 }
