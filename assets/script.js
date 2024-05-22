@@ -50,7 +50,7 @@ submitButton.addEventListener('click', function (event) {
 });
 
 const themeSwitcher = document.querySelector('#theme-switcher');
-const container = document.querySelector('.container-dark');
+const container = document.querySelectorAll('.container-dark');
 
 let mode = 'dark';
 
