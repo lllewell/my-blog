@@ -26,10 +26,14 @@
     align-self: center;
 }
 
-.container-dark {
-  
+.dark {
+    background-color:#243447;
+    height: 100vh;
+    color: #bebebe
 }
 
-.container-light {
-   
+.light {
+    background-color: #f0ead6;
+    color: black;
+    height: 100vh;
 }
