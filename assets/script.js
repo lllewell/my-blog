@@ -1,12 +1,9 @@
 const usernameInput = document.querySelector('#uname');
 const blogTitleInput = document.querySelector('#title');
-const contentInput = document.querySelector('#content');
+const contentInput = document.querySelector('#content-box');
 const submitButton = document.querySelector('#button');
 
-// Why do we need to call a function before the function?
-// redirectPage();
-
-storeData();
+const dataInputs = [];
 
 function storeData() {
     const data = {
@@ -14,7 +11,8 @@ function storeData() {
         title: blogTitleInput.value.trim(),      
         content: contentInput.value.trim(),
     };
-    localStorage.setItem('data', JSON.stringify(data));
+    dataInputs.textContent = data.textContent;
+    localStorage.setItem('data', JSON.stringify(dataInputs));
 
     // Need to figure out what you're doing here, how will this redirect to the next page
     // if (storedUsername && storedTitle && storedContent) {
