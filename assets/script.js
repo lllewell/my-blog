@@ -49,7 +49,7 @@ submitButton.addEventListener('click', function (event) {
 
 });
 
-const themeSwitcher = document.querySelector('#theme-switcher');
+const button = document.querySelector('#theme-switcher');
 const container = document.querySelector('.container dark');
 
 let mode = 'dark';
