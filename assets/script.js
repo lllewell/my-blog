@@ -43,7 +43,7 @@ submitButton.addEventListener('click', function (event) {
     localStorage.setItem('title');
     localStorage.setItem('content');
 
-    window.location.href = './blog.html';
+    // window.location.href = '/my-blog/blog.html';
 
     storeData();
 
