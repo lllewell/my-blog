@@ -51,6 +51,9 @@ submitButton.addEventListener('click', function (event) {
 
 
 });
+const setTheme = function() {
+    htmlEl.dataset.theme = localStorage.getItem('theme');
+  }
 
 const htmlEl = document.querySelector('html');
 
@@ -62,3 +65,5 @@ const toggleTheme = function() {
     }
     localStorage.setItem('theme', htmlEl.dataset.theme);
   }
+
+  if (modeBtn) modeBtn.addEventListener('click', toggleTheme);
