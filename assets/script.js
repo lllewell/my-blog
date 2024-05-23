@@ -32,12 +32,12 @@ submitButton.addEventListener('click', function (event) {
     const username = document.querySelector('#uname');
     const title = document.querySelector('#title');
     const content = document.querySelector('#content');
-
-    if (username === "") {
+// Display message doesn't do anything
+    if (username === '') {
         displayMessage('error', 'Please complete the form');
-    } else if (title === "") {
+    } else if (title === '') {
         displayMessage('error', 'Please complete the form');
-    } else if (content === "") {
+    } else if (content === '') {
         displayMessage('error', 'Please complete the form');
         localStorage.setItem('username');
         localStorage.setItem('title');
@@ -53,6 +53,21 @@ submitButton.addEventListener('click', function (event) {
 
 
 });
+
+// let icon = document.querySelector('.icon');
+
+// icon.addEventListener('click', function (){
+//     if (icon === 'dark') {
+//         icon = 'light';
+
+//         document.body.setAttribute('class', 'light');
+//     } else if (icon === 'light') {
+//         icon = 'dark';
+
+//         document.body.setAttribute('class', 'dark');
+//     }
+
+// })
 
 // const themeSwitcher = document.querySelector('#theme-switcher');
 // const icon = document.querySelector('.icon');
