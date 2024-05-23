@@ -43,6 +43,8 @@ submitButton.addEventListener('click', function (event) {
         localStorage.setItem('title');
         localStorage.setItem('content');
       };
+
+      window.location.href ="https://lllewell.github.io/my-blog/blog.html"
     
 
 
@@ -52,22 +54,22 @@ submitButton.addEventListener('click', function (event) {
 
 });
 
-const themeSwitcher = document.querySelector('#theme-switcher');
-const icon = document.querySelector('.icon');
+// const themeSwitcher = document.querySelector('#theme-switcher');
+// const icon = document.querySelector('.icon');
 
 
-themeSwitcher.addEventListener('click', function () {
-    if (icon === 'dark') {
-      icon = 'light';
-    //   This method was given by Xpert assistant, still not functional
-    //   container.classList.remove('dark');
-    //   container.classList.add('light');
-      container.setAttribute('class', 'dark-theme');
-    } else {
-      icon = 'dark';
-    //   Given by Xpert assistant
-    //   container.classList.remove('light');
-    //   container.classList.add('dark');
-      container.setAttribute('class', 'light');
-    }
-  });
+// themeSwitcher.addEventListener('click', function () {
+//     if (icon === 'dark') {
+//       icon = 'light';
+//     //   This method was given by Xpert assistant, still not functional
+//     //   container.classList.remove('dark');
+//     //   container.classList.add('light');
+//       container.setAttribute('class', 'dark-theme');
+//     } else {
+//       icon = 'dark';
+//     //   Given by Xpert assistant
+//     //   container.classList.remove('light');
+//     //   container.classList.add('dark');
+//       container.setAttribute('class', 'light');
+//     }
+//   });
