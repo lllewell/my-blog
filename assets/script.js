@@ -6,46 +6,42 @@ const submitButton = document.querySelector('#button');
 // const dataInputs = JSON.parse(localStorage.getItem('data')) || [];
 
 function displayMessage(type, message) {
-  msgDiv.textContent = message;
-  msgDiv.setAttribute('class', type);
+    msgDiv.textContent = message;
+    msgDiv.setAttribute('class', type);
 };
 
+const data = JSON.parse(localStorage.getItem('data')) || [];
 
 function storeData() {
     const data = {
         username: usernameInput.value.trim(),
-        title: blogTitleInput.value.trim(),      
+        title: blogTitleInput.value.trim(),
         content: contentInput.value.trim(),
     };
-    // dataInputs.textContent = data.textContent;
+
+    data.push(data);
+
     localStorage.setItem('data', JSON.stringify(data));
 
 
-        // Expert assistant gave me this code but not sure if works in this case to redirect to the next page
-        // window.location.href = file:///Users/lianellewellyn/bootcamp/challenges/my-blog/blog.html
+
 }
 
 
 submitButton.addEventListener('click', function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     const username = document.querySelector('#uname');
     const title = document.querySelector('#title');
     const content = document.querySelector('#content');
-// Display message doesn't do anything
-    if (username === '') {
-        displayMessage('error', 'Please complete the form');
-    } else if (title === '') {
-        displayMessage('error', 'Please complete the form');
-    } else if (content === '') {
-        displayMessage('error', 'Please complete the form');
-        localStorage.setItem('username');
-        localStorage.setItem('title');
-        localStorage.setItem('content');
-      };
+    // Display message doesn't do anything
+    if (username === '' || title === '' || content === '') {
+        return displayMessage('error', 'Please complete the form');
+    };
 
-      window.location.href ="https://lllewell.github.io/my-blog/blog.html"
-    
+    localStorage.setItem('username');
+    localStorage.setItem('title');
+    localStorage.setItem('content');
 
 
 
