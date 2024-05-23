@@ -3,9 +3,8 @@ const blogTitleInput = document.querySelector('#title');
 const contentInput = document.querySelector('#content-box');
 const submitButton = document.querySelector('#button');
 
-const dataInputs = localStorage.getItem('data')
+// const dataInputs = JSON.parse(localStorage.getItem('data')) || [];
 
-const data = JSON.parse('data') || [];
 
 function storeData() {
     const data = {
