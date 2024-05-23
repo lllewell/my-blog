@@ -6,8 +6,12 @@
 .blog-heading {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 4px;
+    justify-content: flex-end;
+}
+
+.icon {
+    width: 30px;
+    cursor: pointer;
 }
 
 #form {
@@ -27,13 +31,23 @@
 }
 
 .dark {
-    background-color:#243447;
+    background-color:var(--secondary-color);
     height: 100vh;
     color: #bebebe
 }
 
 .light {
-    background-color: #f0ead6;
+    background-color: var(--primary-color);
     color: black;
     height: 100vh;
+}
+
+:root {
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+}
+
+.dark-theme {
+    --primary-color: #000106;
+    --secondary-color: #fff;
 }

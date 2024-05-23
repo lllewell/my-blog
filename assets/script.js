@@ -53,22 +53,21 @@ submitButton.addEventListener('click', function (event) {
 });
 
 const themeSwitcher = document.querySelector('#theme-switcher');
-const container = document.querySelectorAll('.container-dark');
+const icon = document.querySelector('.icon');
 
-let mode = 'dark';
 
-// themeSwitcher.addEventListener('click', function () {
-//     if (mode === 'dark') {
-//       mode = 'light';
-//     //   This method was given by Xpert assistant, still not functional
-//       container.classList.remove('dark');
-//       container.classList.add('light');
-//     //   container.setAttribute('class', 'container light');
-//     } else {
-//       mode = 'dark';
-//     //   Given by Xpert assistant
-//       container.classList.remove('light');
-//       container.classList.add('dark');
-//     //   container.setAttribute('class', 'container dark');
-//     }
-//   });
+themeSwitcher.addEventListener('click', function () {
+    if (icon === 'dark') {
+      icon = 'light';
+    //   This method was given by Xpert assistant, still not functional
+    //   container.classList.remove('dark');
+    //   container.classList.add('light');
+      container.setAttribute('class', 'dark-theme');
+    } else {
+      icon = 'dark';
+    //   Given by Xpert assistant
+    //   container.classList.remove('light');
+    //   container.classList.add('dark');
+      container.setAttribute('class', 'light');
+    }
+  });
