@@ -39,9 +39,9 @@ submitButton.addEventListener('click', function (event) {
         return displayMessage('error', 'Please complete the form');
     };
 
-    localStorage.setItem('username');
-    localStorage.setItem('title');
-    localStorage.setItem('content');
+    localStorage.setItem('username', JSON.stringify(username));
+    localStorage.setItem('title', JSON.stringify(title));
+    localStorage.setItem('content', JSON.stringify(content));
 
     // window.location.href = '/my-blog/blog.html';
 
@@ -65,5 +65,3 @@ const toggleTheme = function() {
     }
     localStorage.setItem('theme', htmlEl.dataset.theme);
   }
-
-  if (modeBtn) modeBtn.addEventListener('click', toggleTheme);
