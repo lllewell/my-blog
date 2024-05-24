@@ -43,12 +43,17 @@ function storeData() {
 
 
   localStorage.setItem('arrangeData', JSON.stringify(dataInputs));
-
-  // dataInputs.push(arrangeData);
-
-
-
 }
+
+// get function to append inputs in storeData() to dataInputs?
+const addNewData = function () {
+  dataInputs.push(savedData);
+};
+
+addNewData();
+
+
+
 
 
 submitButton.addEventListener('click', function (event) {
@@ -69,6 +74,7 @@ submitButton.addEventListener('click', function (event) {
   // window.location.href = '/my-blog/blog.html';
 
   storeData();
+
 
 
 
