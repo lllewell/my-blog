@@ -30,16 +30,7 @@
     align-self: center;
 }
 
-.dark {
-    height: 100vh;
-    color: #bebebe
-}
 
-.light {
-    color: black;
-    height: 100vh;
-}
-
-[data-theme] {
+[data-theme='dark'] {
     background-color: black;
 }

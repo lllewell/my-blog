@@ -2,13 +2,18 @@ const usernameInput = document.querySelector('#uname');
 const blogTitleInput = document.querySelector('#title');
 const contentInput = document.querySelector('#content-box');
 const submitButton = document.querySelector('#button');
+const toggleButton = document.querySelector('#mode');
 
-// const dataInputs = JSON.parse(localStorage.getItem('data')) || [];
+
+const setTheme = function() {
+  htmlEl.dataset.theme = localStorage.getItem('theme');
+}
 
 function displayMessage(type, message) {
     msgDiv.textContent = message;
     msgDiv.setAttribute('class', type);
 };
+
 
 const data = JSON.parse(localStorage.getItem('data')) || [];
 
@@ -51,17 +56,17 @@ submitButton.addEventListener('click', function (event) {
 
 
 });
-const setTheme = function() {
-    htmlEl.dataset.theme = localStorage.getItem('theme');
-  }
 
 const htmlEl = document.querySelector('html');
 
-const toggleTheme = function() {
+let mode = 'light';
+
+toggleButton.addEventListener('click', function() {
     if (htmlEl.dataset.theme === 'dark') {
       htmlEl.dataset.theme = 'light';
     } else {
       htmlEl.dataset.theme = 'dark';
-    }
+    };
+    
     localStorage.setItem('theme', htmlEl.dataset.theme);
-  }
+  };
