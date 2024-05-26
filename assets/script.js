@@ -1,7 +1,7 @@
 const usernameInput = document.querySelector('#uname');
 const blogTitleInput = document.querySelector('#title');
 const contentInput = document.querySelector('#content-box');
-const submitButton = document.querySelector('#submit');
+const submitButton = document.querySelector('.submit');
 const toggleButton = document.querySelector('#toggle');
 const htmlEl = document.querySelector('html');
 
@@ -14,8 +14,6 @@ function displayMessage(type, message) {
   msgDiv.textContent = message;
   msgDiv.setAttribute('class', type);
 };
-
-
 
 toggleButton.addEventListener('click', function (event) {
 
@@ -32,20 +30,22 @@ toggleButton.addEventListener('click', function (event) {
 
 const info = localStorage.getItem('data');
 
-const data = JSON.parse(localStorage.getItem('info')) || [];
-
 function storeData() {
-  const dataInputs = {
+  const data = JSON.parse(localStorage.getItem('data')) || [];
+
+  const dataInput = {
     username: usernameInput.value.trim(),
     title: blogTitleInput.value.trim(),
     content: contentInput.value.trim(),
   };
 
-  data.push(dataInputs);
+  data.push(dataInput);
 
-  const addNewData = JSON.stringify(dataInputs);
+  localStorage.setItem('data', JSON.stringify(data));
 
-  localStorage.setItem('dataInputs', addNewData);
+  setTimeout(function() {
+    location.assign('./blog.html');
+  }, 250);
 
 }
 
@@ -56,6 +56,10 @@ submitButton.addEventListener('click', function (event) {
   // Display message doesn't do anything
   if (usernameInput === '' || blogTitleInput === '' || contentInput === '') {
     return displayMessage('error', 'Please complete the form');
+  } else {
+    storeData();
   }
 
+ 
 });
+

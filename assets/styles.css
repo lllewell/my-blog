@@ -34,3 +34,8 @@
 [data-theme='dark'] {
     background-color: black;
 }
+
+#toggle {
+    width: 160px;
+
+}
