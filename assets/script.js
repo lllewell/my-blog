@@ -27,9 +27,9 @@ const switchTheme = function () {
 };
 
 
-const savedData = localStorage.getItem('dataInputs');
+const info = localStorage.getItem('data');
 
-const dataInputs = JSON.parse(localStorage.getItem('savedData')) || [];
+const data = JSON.parse(localStorage.getItem('info')) || [];
 
 function storeData() {
   const dataInputs = {
@@ -38,19 +38,22 @@ function storeData() {
     content: contentInput.value.trim(),
   };
 
+  data.push(dataInputs);
 
-  const arrangeData = JSON.stringify(dataInputs);
+  const addNewData = JSON.stringify(dataInputs);
 
+  localStorage.setItem('dataInputs', addNewData);
 
-  localStorage.setItem('arrangeData', JSON.stringify(dataInputs));
 }
 
 // get function to append inputs in storeData() to dataInputs?
-const addNewData = function () {
-  dataInputs.push(savedData);
-};
+// const addNewData = function () {
+//   data.push(dataInputs);
 
-addNewData();
+//   addNewData();
+  
+// };
+
 
 
 
@@ -67,11 +70,6 @@ submitButton.addEventListener('click', function (event) {
     return displayMessage('error', 'Please complete the form');
   };
 
-  // localStorage.setItem('username', JSON.stringify(username));
-  // localStorage.setItem('title', JSON.stringify(title));
-  // localStorage.setItem('content', JSON.stringify(content));
-
-  // window.location.href = '/my-blog/blog.html';
 
   storeData();
 
