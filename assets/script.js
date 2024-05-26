@@ -18,6 +18,7 @@ function displayMessage(type, message) {
 
 
 toggleButton.addEventListener('click', function (event) {
+
   event.preventDefault();
 
   if (htmlEl.dataset.theme === 'dark') {
@@ -28,7 +29,6 @@ toggleButton.addEventListener('click', function (event) {
   localStorage.setItem('theme', htmlEl.dataset.theme);
 }
 );
-
 
 const info = localStorage.getItem('data');
 
