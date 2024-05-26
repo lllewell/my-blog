@@ -17,17 +17,17 @@ function displayMessage(type, message) {
 
 
 
-  toggleButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    
-    if (htmlEl.dataset.theme === 'dark') {
-      htmlEl.dataset.theme = 'light';
-    } else {
-      htmlEl.dataset.theme = 'dark';
-    }
-    localStorage.setItem('theme', htmlEl.dataset.theme);
+toggleButton.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  if (htmlEl.dataset.theme === 'dark') {
+    htmlEl.dataset.theme = 'light';
+  } else {
+    htmlEl.dataset.theme = 'dark';
   }
-  );
+  localStorage.setItem('theme', htmlEl.dataset.theme);
+}
+);
 
 
 const info = localStorage.getItem('data');
@@ -56,6 +56,6 @@ submitButton.addEventListener('click', function (event) {
   // Display message doesn't do anything
   if (usernameInput === '' || blogTitleInput === '' || contentInput === '') {
     return displayMessage('error', 'Please complete the form');
-  } 
+  }
 
 });
