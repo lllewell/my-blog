@@ -1,8 +1,8 @@
 const usernameInput = document.querySelector('#uname');
 const blogTitleInput = document.querySelector('#title');
 const contentInput = document.querySelector('#content-box');
-const submitButton = document.querySelector('#button');
-const toggleButton = document.querySelector('#mode');
+const submitButton = document.querySelector('#submit');
+const toggleButton = document.querySelector('#toggle');
 const htmlEl = document.querySelector('html');
 
 
@@ -17,14 +17,17 @@ function displayMessage(type, message) {
 
 
 
-const switchTheme = function () {
-  if (htmlEl.dataset.theme === 'dark') {
-    htmlEl.dataset.theme = 'light';
-  } else {
-    htmlEl.dataset.theme = 'dark';
+  toggleButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    
+    if (htmlEl.dataset.theme === 'dark') {
+      htmlEl.dataset.theme = 'light';
+    } else {
+      htmlEl.dataset.theme = 'dark';
+    }
+    localStorage.setItem('theme', htmlEl.dataset.theme);
   }
-  localStorage.setItem('theme', htmlEl.dataset.theme);
-};
+  );
 
 
 const info = localStorage.getItem('data');
@@ -46,36 +49,13 @@ function storeData() {
 
 }
 
-// get function to append inputs in storeData() to dataInputs?
-// const addNewData = function () {
-//   data.push(dataInputs);
-
-//   addNewData();
-  
-// };
-
-
-
-
-
 
 submitButton.addEventListener('click', function (event) {
   event.preventDefault();
 
-  const username = document.querySelector('#uname');
-  const title = document.querySelector('#title');
-  const content = document.querySelector('#content');
   // Display message doesn't do anything
-  if (username === '' || title === '' || content === '') {
+  if (usernameInput === '' || blogTitleInput === '' || contentInput === '') {
     return displayMessage('error', 'Please complete the form');
-  };
-
-
-  storeData();
-
-
-
-
+  } 
 
 });
-
