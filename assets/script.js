@@ -47,7 +47,7 @@ function storeData() {
 
 
   setTimeout(function() {
-    location.assign('https://lllewell.github.io/my-blog/blog.html');
+    location.assign('./blog.html');
   }, 250);
 
 };
