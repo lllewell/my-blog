@@ -43,3 +43,9 @@
 #display {
     margin-left: 4px;
 }
+
+.footer {
+    margin-left: 4px;
+    display: flex;
+    flex-direction: column;
+}
