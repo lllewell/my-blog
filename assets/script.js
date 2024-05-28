@@ -4,6 +4,7 @@ const contentInput = document.querySelector('#content-box');
 const submitButton = document.querySelector('.submit');
 const toggleButton = document.querySelector('#toggle');
 const htmlEl = document.querySelector('html');
+const posts = document.querySelector('#display');
 
 
 const setTheme = function () {
@@ -45,25 +46,28 @@ function storeData() {
   localStorage.setItem('data', JSON.stringify(data));
 
 
-  for (let dataInput of data) {
-    const headingEl = document.createElement('header');
-    const postEl = document.createElement('section');
-    const pEl = document.createElement('p');
-
-    headingEl.textContent = dataInput.username;
-    postEl.textContent = dataInput.title;
-    pEl.textContent = dataInput.content;
-
-
-    headingEl.appendChild(postEl);
-    postEl.appendChild(pEl);
-
-  };
   setTimeout(function() {
     location.assign('./blog.html');
   }, 250);
 
 };
+
+const displayPosts = function () {
+  
+  for (let dataInput of data) {
+    const headingEl = document.createElement('h3');
+    const postEl = document.createElement('h4');
+    const pEl = document.createElement('p');
+    
+    headingEl.textContent = dataInput.username;
+    postEl.textContent = dataInput.title;
+    pEl.textContent = dataInput.content;
+    
+    
+    posts.append(headingEl, postEl, pEl);
+    
+  };
+}
 
 
 submitButton.addEventListener('click', function (event) {
@@ -78,5 +82,5 @@ submitButton.addEventListener('click', function (event) {
  
  
 });
-
+displayPosts();
 
