@@ -30,8 +30,9 @@ toggleButton.addEventListener('click', function (event) {
 
 const info = localStorage.getItem('data');
 
+const data = JSON.parse(localStorage.getItem('data')) || [];
+
 function storeData() {
-  const data = JSON.parse(localStorage.getItem('data')) || [];
 
   const dataInput = {
     username: usernameInput.value.trim(),
@@ -43,11 +44,26 @@ function storeData() {
 
   localStorage.setItem('data', JSON.stringify(data));
 
+
+  for (let dataInput of data) {
+    const headingEl = document.createElement('header');
+    const postEl = document.createElement('section');
+    const pEl = document.createElement('p');
+
+    headingEl.textContent = dataInput.username;
+    postEl.textContent = dataInput.title;
+    pEl.textContent = dataInput.content;
+
+
+    headingEl.appendChild(postEl);
+    postEl.appendChild(pEl);
+
+  };
   setTimeout(function() {
     location.assign('./blog.html');
   }, 250);
 
-}
+};
 
 
 submitButton.addEventListener('click', function (event) {
@@ -59,7 +75,8 @@ submitButton.addEventListener('click', function (event) {
   } else {
     storeData();
   }
-
+ 
  
 });
+
 
