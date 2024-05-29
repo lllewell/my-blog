@@ -80,7 +80,8 @@ submitButton.addEventListener('click', function (event) {
     storeData();
   }
  
- 
+  // moved link behavior to the js
+  location.assign('./blog.html')
 });
 displayPosts();
 
